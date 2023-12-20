@@ -1,0 +1,28 @@
+<!-- decrypt_form.html -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Decryption Form</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/styles.css') }}">
+
+
+</head>
+<body>
+    <h2>Decryption Form</h2>
+    <form method="post" action="{{ url_for('decrypt') }}" enctype="multipart/form-data">
+        <label for="key_filename">Key Filename:</label>
+        <input type="text" name="key_filename" required>
+        <br>
+        <label for="encrypted_message">Encrypted Message:</label>
+        <textarea name="encrypted_message" rows="4" required></textarea>
+        <br>
+        <label for="file_path">File Path (Optional):</label>
+        <input type="file" name="file_path">
+        <br>
+        <input type="submit" value="Decrypt">
+    </form>
+</body>
+</html>

@@ -1,0 +1,31 @@
+<!-- templates/encrypt.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Encryption Result</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/styles.css') }}">
+
+
+</head>
+<body>
+    <h1>Encryption Result</h1>
+    <p>Original Message: {{ message }}</p>
+    <p>Encryption Key: {{ key }}</p>
+    <p>Encrypted Message: {{ encrypted_message }}</p>
+
+    <form method="post" action="{{ url_for('decrypt_message') }}">
+        <label for="encrypted_message_input">Encrypted Message:</label>
+        <input type="text" id="encrypted_message_input" name="encrypted_message" required>
+        <input type="submit" value="Decrypt Message">
+    </form>
+
+    {% if decrypted_message %}
+        <h2>Decryption Result</h2>
+        <p>Decrypted Message: {{ decrypted_message }}</p>
+    {% endif %}
+
+    <a href="{{ url_for('index') }}">Back to Home</a>
+</body>
+</html>

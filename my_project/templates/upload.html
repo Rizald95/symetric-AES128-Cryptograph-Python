@@ -1,0 +1,18 @@
+<!-- templates/upload.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Upload and Encryption Result</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/styles.css') }}">
+
+
+</head>
+<body>
+    <h1>Upload and Encryption Result</h1>
+    <p>Original Filename: {{ filename }}</p>
+    <p>Encryption Key: {{ key }}</p>
+    <p>Encrypted Filename: {{ encrypted_filename }}</p>
+</body>
+</html>

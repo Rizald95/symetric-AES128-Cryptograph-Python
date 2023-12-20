@@ -1,0 +1,39 @@
+<!-- templates/dashboard.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/styles.css') }}">
+
+
+</head>
+<body>
+    <h1>Dashboard</h1>
+    <table border="1">
+        <thead>
+            <tr>
+                <th>No</th>
+                <th>Source Filename</th>
+                <th>Encrypted Filename</th>
+                <th>Path</th>
+                <th>Status</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for file in files %}
+                <tr>
+                    <td>{{ file['no'] }}</td>
+                    <td>{{ file['source_filename'] }}</td>
+                    <td>{{ file['encrypted_filename'] }}</td>
+                    <td>{{ file['path'] }}</td>
+                    <td>{{ file['status'] }}</td>
+                    <td><a href="{{ url_for('decrypt') }}" class="action-button">{{ file['action_button'] }}</a></td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</body>
+</html>

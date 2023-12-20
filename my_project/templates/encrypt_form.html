@@ -1,0 +1,20 @@
+<!-- templates/encrypt_form.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Encrypt Message</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/styles.css') }}">
+
+
+</head>
+<body>
+    <h1>Encrypt Message</h1>
+    <form action="{{ url_for('encrypt') }}" method="post">
+        <label for="message">Enter your message:</label>
+        <input type="text" id="message" name="message" required>
+        <button type="submit">Encrypt</button>
+    </form>
+</body>
+</html>
